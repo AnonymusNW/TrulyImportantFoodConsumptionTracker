@@ -13,3 +13,10 @@ def add_entry(data):
     cursor.execute("SELECT SUM(protein) FROM Kalorien WHERE date=current_date")
     print(f"Amount of proteins consumed today:\n{cursor.fetchall()}")
 
+def get_count():
+    cursor.execute("SELECT SUM(count) FROM Kalorien WHERE date=current_date")
+    return cursor.fetchall()
+
+def get_protein():
+    cursor.execute("SELECt SUM(protein) FROM Kalorien WHERE date=current_date")
+    return cursor.fetchall()
